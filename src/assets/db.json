@@ -1,0 +1,12 @@
+{
+  "venues": [
+    {
+      "name": "Layeli",
+      "location": "Sfax,Tunisia",
+      "surface": "300m2",
+      "capacity": "1000",
+      "price": "5000"
+    }
+  ]
+
+}
