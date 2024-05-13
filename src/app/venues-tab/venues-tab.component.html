@@ -1,30 +1,66 @@
-
+<p-toolbar styleClass="mb-4 gap-2">
+  <ng-template pTemplate="center">
+    <p-messages [(value)]="messages" [enableService]="false" [showTransitionOptions]="'500ms'"
+                [hideTransitionOptions]="'500ms'"  />
+  </ng-template>
+  <ng-template pTemplate="right">
+    <p-button styleClass="p-button-help" label="Create New" (onClick)="create()"></p-button>
+    <span class="button-space"></span>
+    <p-button styleClass="p-button-secondary" icon="pi pi-refresh"  (onClick)="getAllVenues()"></p-button>
+  </ng-template>
+</p-toolbar>
 <div class="card">
-  <p-table [value]="venues" [tableStyle]="{'min-width': '60rem'}">
+  <p-table #dt [value]="venues" [tableStyle]="{'min-width': '60rem'}"
+           currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+           [rowsPerPageOptions]="[5, 10, 20]" [paginator]="true"
+           [rows]="5"
+           [showCurrentPageReport]="true">
     <ng-template pTemplate="caption">
       <div class="flex align-items-center justify-content-between">
-        venues
-        <p-button icon="pi pi-refresh"></p-button>
+        <h4 class="m-0">Manage Products</h4>
+        <p-toast />
+        <p-confirmDialog />
+<!--        <span class="p-input-icon-left">-->
+<!--                    <i class="pi pi-search"></i>-->
+<!--                    <input-->
+<!--                      pInputText-->
+<!--                      type="text"-->
+<!--                      (input)="dt.filterGlobal($any($event.target).value, 'contains')"-->
+<!--                      placeholder="Search..." />-->
+<!--                </span>-->
       </div>
     </ng-template>
+
     <ng-template pTemplate="header">
       <tr>
-        <th>Name</th>
+        <th pSortableColumn="name">Name <p-sortIcon field="name" /></th>
         <th>Image</th>
-        <th>Price</th>
-        <th>Category</th>
+        <th>Address</th>
+        <th pSortableColumn="capacity">Capacity<p-sortIcon field="capacity" /></th>
+        <th pSortableColumn="surface">Surface <p-sortIcon field="Surface" /></th>
+        <th pSortableColumn="price">Price <p-sortIcon field="price" /></th>
         <th>Reviews</th>
         <th>Status</th>
+        <th>Actions</th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-venue>
       <tr>
         <td>{{venue.name}}</td>
-        <td></td>
-        <td>{{venue.price | currency:'TND'}}</td>
+        <td><img [src]="venue.imageUrl" [alt]="venue.name"
+                 width="100"
+                 class="shadow-4" />
         <td>{{venue.location}}</td>
-<!--        <td><p-rating [ngModel]="venue.price" [readonly]="true" [cancel]="false"></p-rating></td>-->
-<!--        <td><p-tag [value]="venue.inventoryStatus" [severity]="getSeverity(venue.inventoryStatus)"></p-tag></td>-->
+        <td>{{venue.capacity}}</td>
+        <td>{{venue.surface}}</td>
+        <td>{{venue.price | currency:'TND'}}</td>
+        <td><p-rating [ngModel]="venue.rating" [readonly]="true" [cancel]="false"></p-rating></td>
+        <td><p-tag
+          [value]="venue.status"
+          [severity]="getSeverity(venue.status)" /></td>
+        <td> <button pButton pRipple icon="pi pi-trash" class="p-button-danger" (click)="delete(venue.id,$event)" ></button>
+          <button pButton pRipple icon="pi pi-pen-to-square"  (click)="edit(venue.id)" ></button>
+        </td>
       </tr>
     </ng-template>
     <ng-template pTemplate="summary">

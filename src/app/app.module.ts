@@ -12,14 +12,34 @@ import {TableModule} from "primeng/table";
 import {RatingModule} from "primeng/rating";
 import {TagModule} from "primeng/tag";
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule} from "@angular/forms";
-
-
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {NgOptimizedImage} from "@angular/common";
+import {ToolbarModule} from "primeng/toolbar";
+import { CreateVenueComponent } from './create-venue/create-venue.component';
+import {DropdownModule} from "primeng/dropdown";
+import {InputTextModule} from "primeng/inputtext";
+import {InputNumberModule} from "primeng/inputnumber";
+import {FloatLabelModule} from "primeng/floatlabel";
+import {FileUploadModule} from "primeng/fileupload";
+import {ToastModule} from "primeng/toast";
+import {CheckboxModule} from "primeng/checkbox";
+import {InputGroupAddonModule} from "primeng/inputgroupaddon";
+import {InputGroupModule} from "primeng/inputgroup";
+import {KeyFilterModule} from "primeng/keyfilter";
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { RippleModule } from 'primeng/ripple';
+import {MessageModule} from "primeng/message";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import {AngularFireModule} from "@angular/fire/compat";
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import {environment} from "../environments/environment.development";
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    VenuesTabComponent
+    VenuesTabComponent,
+    CreateVenueComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +51,32 @@ import {FormsModule} from "@angular/forms";
     RatingModule,
     TagModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgOptimizedImage,
+    ToolbarModule,
+    DropdownModule,
+    ReactiveFormsModule,
+    InputTextModule,
+    InputNumberModule,
+    FloatLabelModule,
+    FileUploadModule,
+    ToastModule,
+    CheckboxModule,
+    InputGroupAddonModule,
+    InputGroupModule,
+    KeyFilterModule,
+    ConfirmDialogModule,
+    MessageModule,
+    RippleModule,
+    BrowserAnimationsModule,
+    DynamicDialogModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
+    // ImagekitioAngularModule.forRoot({
+    //   publicKey: "public_Ulif2s2vVpYR6BZUYx0Q+2QOlTU=",
+    //   urlEndpoint:"https://ik.imagekit.io/EventPlanner",
+    // })
+
   ],
   providers: [],
   bootstrap: [AppComponent]
