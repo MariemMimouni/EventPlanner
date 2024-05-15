@@ -17,9 +17,11 @@ items: MenuItem[] | undefined;
     },
     {
       label: 'Decoration',
+      routerLink:'/decoration',
     },
     {
       label: 'Food',
+      routerLink:'/food'
 
     },
   ]

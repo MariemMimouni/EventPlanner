@@ -7,6 +7,19 @@
       "capacity": "1000",
       "price": "5000"
     }
+  ],
+  "Decoration" : [
+    {
+    "id" : "0001",
+    "name": "Flowers",
+    "image":"flowers.jpg",
+    "reviews": "",
+    "status": "Availabe",
+    "price": "100"
+    }
+
   ]
+    
+  
 
 }

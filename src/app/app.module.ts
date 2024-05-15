@@ -13,13 +13,15 @@ import {RatingModule} from "primeng/rating";
 import {TagModule} from "primeng/tag";
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from "@angular/forms";
+import { DecorationTabComponent } from './decoration-tab/decoration-tab/decoration-tab.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    VenuesTabComponent
+    VenuesTabComponent,
+    DecorationTabComponent
   ],
   imports: [
     BrowserModule,
