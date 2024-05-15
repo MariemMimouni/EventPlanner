@@ -1,0 +1,72 @@
+<div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
+  <form [formGroup]="formGroup">
+    <!-- Name input -->
+    <div class="form-group">
+      <label for="name" class="block text-900 font-medium mb-2">Name</label>
+      <p-inputGroup>
+        <input id="name" type="text" pInputText formControlName="name" class="w-full mb-3">
+      </p-inputGroup>
+    </div>
+    <div>
+    <label for="image" class="block text-900 font-medium mb-2">Image</label>
+    <p-fileUpload
+      id = "image"
+      mode="basic"
+      chooseLabel="Choose"
+      chooseIcon="pi pi-upload"
+      name="demo[]"
+      url="https://www.primefaces.org/cdn/api/upload.php"
+      accept="image/*"
+      [auto]="true"
+      maxFileSize="1000000"
+      (onUpload)="onUpload($event) " formControlName="imageUrl"/>
+    </div>
+    <!-- Location input -->
+    <div class="form-group">
+      <label for="location" class="block text-900 font-medium mb-2">Location</label>
+      <p-inputGroup>
+        <input id="location" type="text" pInputText formControlName="location" class="w-full mb-3">
+      </p-inputGroup>
+    </div>
+
+    <!-- Capacity input -->
+    <div class="form-group">
+      <label for="capacity" class="block text-900 font-medium mb-2">Capacity</label>
+      <p-inputGroup>
+        <p-inputNumber id="capacity" inputId="withoutgrouping" formControlName="capacity" class="w-full"></p-inputNumber>
+      </p-inputGroup>
+    </div>
+
+    <!-- Area input -->
+    <div class="form-group">
+      <label for="area" class="block text-900 font-medium mb-2">Area</label>
+      <p-inputGroup>
+        <p-inputNumber id="area" inputId="integeronly" formControlName="surface" class="w-full"></p-inputNumber>
+      </p-inputGroup>
+    </div>
+
+    <!-- Cost input -->
+    <div class="form-group">
+      <label class="block text-900 font-medium mb-2">Cost (TND)</label>
+      <p-inputGroup>
+        <p-inputGroupAddon>$</p-inputGroupAddon>
+        <input type="text" pInputText placeholder="Cost TND" formControlName="price" pKeyFilter="money" class="w-full">
+        <p-inputGroupAddon>.00</p-inputGroupAddon>
+      </p-inputGroup>
+    </div>
+
+    <!-- Status dropdown -->
+    <div class="form-group">
+      <label class="block text-900 font-medium mb-2">Status</label>
+      <div>
+      <p-dropdown formControlName="status" [options]="stat" placeholder="Select a Status" class="w-full"></p-dropdown>
+      </div>
+    </div>
+
+    <!-- Create Venue button -->
+    <div class="flex flex-column md:flex-row md:justify-content-between row-gap-2">
+      <button (click)="create()" pButton pRipple label="Save" icon="pi pi-check" severity="success" class="w-full" type="submit"></button>
+      <button (click)="cancel()" pButton pRipple label="Cancel" icon="pi pi-times" class="w-full" severity="secondary"></button>
+    </div>
+  </form>
+</div>
