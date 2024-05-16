@@ -12,9 +12,6 @@ import {TableModule} from "primeng/table";
 import {RatingModule} from "primeng/rating";
 import {TagModule} from "primeng/tag";
 import { HttpClientModule } from '@angular/common/http';
-import { DecorationTabComponent } from './decoration-tab/decoration-tab/decoration-tab.component';
-
-
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NgOptimizedImage} from "@angular/common";
 import {ToolbarModule} from "primeng/toolbar";
@@ -75,11 +72,7 @@ import {environment} from "../environments/environment.development";
     DynamicDialogModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule,
-    // ImagekitioAngularModule.forRoot({
-    //   publicKey: "public_Ulif2s2vVpYR6BZUYx0Q+2QOlTU=",
-    //   urlEndpoint:"https://ik.imagekit.io/EventPlanner",
-    // })
-
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
