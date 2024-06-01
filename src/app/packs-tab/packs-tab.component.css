@@ -1,0 +1,24 @@
+.card {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    margin: 0 10px; /* Marge entre les cartes */
+    max-height: 500px; /* Hauteur maximale des cartes */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*overflow-y: auto; /* Débordement vertical avec barre de défilement si nécessaire */
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Assure que le conteneur prend tout l'espace vertical */
+}
+
+.card-footer {
+    margin-top: 10px; /* Place le pied de carte en bas */
+}
+

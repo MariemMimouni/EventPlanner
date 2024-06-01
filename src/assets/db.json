@@ -102,17 +102,28 @@
       "id": "20"
     }
   ],
-  "Decoration" : [
+  "Packs" : [
     {
     "id" : "0001",
-    "name": "Flowers",
-    "image":"flowers.jpg",
-    "reviews": "",
-    "status": "Availabe",
-    "price": "100"
-    }
+    "name": "S",
+    "price":"800",
+    "rating": ""
+    },
+    {
+      "id" : "0001",
+      "name": "M",
+      "price":"3000",
+      "rating": ""
+    },
+    {
+      "id" : "0001",
+      "name": "L",
+      "price":"5000",
+      "rating": ""
+      }
 
   ]
+  
     
 }
 

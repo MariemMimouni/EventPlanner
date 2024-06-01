@@ -16,12 +16,12 @@ items: MenuItem[] | undefined;
       routerLink:'/venues'
     },
     {
-      label: 'Decoration',
-      routerLink:'/decoration',
+      label: 'Packs',
+      routerLink:'/packs',
     },
     {
-      label: 'Food',
-      routerLink:'/food'
+      label: 'Reservations',
+      routerLink:'/reservations'
 
     },
   ]

@@ -34,12 +34,17 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {environment} from "../environments/environment.development";
+import { PacksTabComponent } from './packs-tab/packs-tab.component';
+import { CardModule } from 'primeng/card';
+import { ConfirmationService } from 'primeng/api';
+
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     VenuesTabComponent,
-    CreateVenueComponent
+    CreateVenueComponent,
+    PacksTabComponent
   ],
   imports: [
     BrowserModule,
@@ -72,9 +77,10 @@ import {environment} from "../environments/environment.development";
     DynamicDialogModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule,
+    CardModule ,
     
   ],
-  providers: [],
+  providers: [ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
