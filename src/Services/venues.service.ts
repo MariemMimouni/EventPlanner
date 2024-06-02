@@ -26,7 +26,6 @@ export class VenuesService {
   constructor(private httpClient :HttpClient) {}
 
   DELETE(id: string) {
-
     return this.httpClient.delete(`http://localhost:300/venues/${id}`)
   }
 }

@@ -37,6 +37,7 @@ import {environment} from "../environments/environment.development";
 import { PacksTabComponent } from './packs-tab/packs-tab.component';
 import { CardModule } from 'primeng/card';
 import { ConfirmationService } from 'primeng/api';
+import { PacksFormComponent } from './packs-form/packs-form.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ConfirmationService } from 'primeng/api';
     NavBarComponent,
     VenuesTabComponent,
     CreateVenueComponent,
-    PacksTabComponent
+    PacksTabComponent,
+    PacksFormComponent
   ],
   imports: [
     BrowserModule,

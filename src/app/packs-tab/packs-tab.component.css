@@ -1,9 +1,7 @@
-.card {
-    background-color: #f0f0f0;
-    border-radius: 8px;
+p-card {
     padding: 16px;
     margin-bottom: 16px;
-    margin: 0 10px; /* Marge entre les cartes */
+    margin: 10px; /* Marge entre les cartes */
     max-height: 500px; /* Hauteur maximale des cartes */
     display: flex;
     flex-direction: column;
@@ -15,10 +13,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Assure que le conteneur prend tout l'espace vertical */
 }
 
 .card-footer {
-    margin-top: 10px; /* Place le pied de carte en bas */
+  display: flex;
+  justify-content: center;
+  gap: 16px; /* Adjust the value as needed for spacing between buttons */
+  margin-top: 16px; /* Adjust the value as needed for spacing above the buttons */
 }
+
 

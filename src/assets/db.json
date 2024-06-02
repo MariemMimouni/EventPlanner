@@ -102,28 +102,24 @@
       "id": "20"
     }
   ],
-  "Packs" : [
+  "Packs": [
     {
-    "id" : "0001",
-    "name": "S",
-    "price":"800",
-    "rating": ""
+      "name": "Premium",
+      "description": "This pack Includes food, music, decoration and Photography",
+      "price": "3000",
+      "id": "0001"
     },
     {
-      "id" : "0001",
-      "name": "M",
-      "price":"3000",
-      "rating": ""
-    },
-    {
-      "id" : "0001",
+      "id": "0001",
       "name": "L",
-      "price":"5000",
-      "rating": ""
-      }
-
+      "description": "This pack Includes food, music, decoration",
+      "price": "5000"
+    },
+    {
+      "id": "305",
+      "name": "Basic Pack",
+      "description": "This pack only includes refreshments, lighting and a photographer.",
+      "price": "500"
+    }
   ]
-  
-    
 }
-

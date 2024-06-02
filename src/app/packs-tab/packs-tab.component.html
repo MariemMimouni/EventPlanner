@@ -1,18 +1,24 @@
-<div class="card-container">
-    <div *ngFor="let pack of packs" class="card">
-        <p-card [style]="{ width: '360px', height: '400px' }">
-            <ng-template pTemplate="header">
-                {{ pack.title }}
-            </ng-template>
-            <p>
-                {{ pack.description }}
-            </p>
-            <ng-template pTemplate="footer" class="card-footer">
-                <div class="flex gap-3 mt-1">
-                    <button pButton type="button" label="Delete" class="w-full" styleClass="w-full" (click)="deletePack(pack)"></button>
-                    <button pButton type="button" label="Edit" class="w-full" styleClass="w-full" (click)="editPack(pack)"></button>
-                </div>
-            </ng-template>
-        </p-card>
-    </div>
+<p-toast></p-toast>
+<p-confirmDialog></p-confirmDialog>
+
+<div class="p-d-flex p-jc-end p-mb-3">
+  <p-button styleClass="p-button-help" label="Create New" (onClick)="createPack()"></p-button>
+</div>
+
+<div class="card-container p-grid">
+  <div *ngFor="let pack of packs" class="p-col-12 p-md-6 p-lg-4 p-mb-3">
+    <p-card [header]="pack.name" [subheader]="pack.description" [style]="{ width: '360px' }">
+      <ng-template pTemplate="header">
+        <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" style="width: 100%; height: auto;" />
+      </ng-template>
+      <p>{{ pack.description }}</p>
+      <p>{{ pack.price | currency }}</p>
+      <ng-template pTemplate="footer">
+        <div class="p-d-flex p-jc-between p-mt-2 card-footer">
+          <p-button label="Delete" severity="danger" class="w-full" styleClass="w-full" (click)="deletePack(pack.id, $event)"></p-button>
+          <p-button label="Edit" severity="warning" class="w-full" styleClass="w-full" (click)="editPack(pack.id)"></p-button>
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
 </div>
