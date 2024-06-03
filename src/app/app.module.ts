@@ -43,6 +43,15 @@ import { Calendar, CalendarModule } from 'primeng/calendar';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChartModule } from 'primeng/chart';
 import { TabViewModule } from 'primeng/tabview';
+import { ClientComponent } from './client/client.component';
+import { HomeComponent } from './client/home/home.component';
+import { OrdersComponent } from './client/orders/orders.component';
+import { ProfileComponent } from './client/profile/profile.component';
+import { SearchComponent } from './client/search/search.component';
+import { BadgeModule } from 'primeng/badge';
+import { AvatarModule } from 'primeng/avatar';
+import { StepsModule } from 'primeng/steps';
+import { CarouselModule } from 'primeng/carousel';
 
 
 @NgModule({
@@ -54,7 +63,17 @@ import { TabViewModule } from 'primeng/tabview';
     PacksTabComponent,
     PacksFormComponent,
     ReservationsComponent,
-    DashboardComponent
+    DashboardComponent,
+    ClientComponent,
+    HomeComponent,
+    OrdersComponent,
+    ProfileComponent,
+    SearchComponent, 
+    ClientComponent,
+    HomeComponent,
+    OrdersComponent,
+    ProfileComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -91,7 +110,10 @@ import { TabViewModule } from 'primeng/tabview';
     CalendarModule,
     ChartModule,
     TabViewModule,
-    
+    BadgeModule,
+    AvatarModule,
+    StepsModule,
+    CarouselModule
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent]
