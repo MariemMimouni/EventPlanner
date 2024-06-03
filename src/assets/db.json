@@ -1,59 +1,34 @@
 {
   "venues": [
     {
-      "name": "mariemmimouni 22",
-      "location": "test",
+      "name": "Layeli",
+      "location": "Sousse, Tunisia",
       "capacity": 809,
       "surface": 7987,
       "price": "837",
       "status": "Available",
-      "imageUrl": null,
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/eventplanner-7267f.appspot.com/o/venues%2F960x0.jpg.webp?alt=media&token=b102871f-28df-43b5-bbaa-c5ff51771688",
       "id": "627"
     },
     {
-      "id": "110",
       "name": "Marassim",
       "location": "Tunis Road, Km 11",
-      "capacity": 809,
+      "capacity": 800,
       "surface": 500,
       "price": "989854",
-      "status": "Not Available"
+      "status": "Available",
+      "imageUrl": null,
+      "id": "110"
     },
     {
-      "id": "159",
-      "name": "Test23",
-      "location": "test",
-      "capacity": 89844,
-      "surface": 500,
-      "price": "76978",
-      "status": "Available"
-    },
-    {
-      "id": "906",
-      "name": "Test23 Update",
-      "location": "test",
-      "capacity": 89844,
-      "surface": 500,
-      "price": "76978",
-      "status": "Available"
-    },
-    {
-      "id": "469",
-      "name": "Test2",
-      "location": "Tunis Road, Km 11",
-      "capacity": 800,
-      "surface": 7987,
-      "price": "56",
-      "status": "Available"
-    },
-    {
-      "id": "146",
-      "name": "Layeli updated",
+      "name": "Opera",
       "location": "lafrane",
       "capacity": 8979,
       "surface": 872,
       "price": "8387",
-      "status": "available"
+      "status": "available",
+      "imageUrl": null,
+      "id": "146"
     },
     {
       "id": "607",
@@ -100,6 +75,16 @@
       "status": "Not Available",
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/eventplanner-7267f.appspot.com/o/venues%2Fpolynesia-3021072_150.jpg?alt=media&token=58116b3c-bf0b-40b9-a598-05e30afb4253",
       "id": "20"
+    },
+    {
+      "id": "250",
+      "name": "Opera",
+      "location": "Gammart",
+      "capacity": 600,
+      "surface": 500,
+      "price": "2000",
+      "status": "Available",
+      "imageUrl": null
     }
   ],
   "Packs": [
@@ -124,32 +109,9 @@
   ],
   "Reservation": [
     {
-      "id": "911",
-      "firstName": "user",
-      "lastName": "user",
-      "venue": {
-        "id": "607",
-        "name": "Layeli updated2",
-        "location": "lafrane",
-        "capacity": 8979,
-        "surface": 872,
-        "price": "8387",
-        "status": "available"
-      },
-      "pack": {
-        "id": "0002",
-        "name": "L",
-        "description": "This pack Includes food, music, decoration",
-        "price": "5000"
-      },
-      "dateFrom": "2024-06-10T23:00:00.000Z",
-      "dateTo": "2024-06-21T23:00:00.000Z",
-      "status": "canceled"
-    },
-    {
-      "id": "0364",
-      "firstName": "user",
-      "lastName": "user",
+      "id": "c7e5",
+      "fullName": "Malek Bali",
+      "email": "user1@gmail.com",
       "venue": {
         "id": "146",
         "name": "Layeli updated",
@@ -165,22 +127,23 @@
         "description": "This pack Includes food, music, decoration",
         "price": "5000"
       },
-      "dateFrom": "2024-06-06T23:00:00.000Z",
-      "dateTo": "2024-06-13T23:00:00.000Z",
+      "dateFrom": "2024-06-12T23:00:00.000Z",
+      "dateTo": "2024-06-20T23:00:00.000Z",
       "status": "confirmed"
     },
     {
-      "id": "4ab7",
-      "firstName": "user",
-      "lastName": "user",
+      "id": "8409",
+      "fullName": "Malek Bali",
+      "email": "user1@gmail.com",
       "venue": {
-        "id": "146",
-        "name": "Layeli updated",
+        "name": "Opera",
         "location": "lafrane",
         "capacity": 8979,
         "surface": 872,
         "price": "8387",
-        "status": "available"
+        "status": "available",
+        "imageUrl": null,
+        "id": "146"
       },
       "pack": {
         "id": "0002",
@@ -188,9 +151,25 @@
         "description": "This pack Includes food, music, decoration",
         "price": "5000"
       },
-      "dateFrom": "2024-06-10T23:00:00.000Z",
-      "dateTo": "2024-06-13T23:00:00.000Z",
+      "dateFrom": "2024-06-04T23:00:00.000Z",
+      "dateTo": "2024-06-11T23:00:00.000Z",
       "status": "Pending"
+    }
+  ],
+  "users": [
+    {
+      "id": "403b",
+      "fullName": "Mariem Mimouni",
+      "email": "admin@example.com",
+      "password": "test123",
+      "role": "admin"
+    },
+    {
+      "id": "4e6d",
+      "fullName": "Malek Bali",
+      "email": "user1@gmail.com",
+      "password": "test123",
+      "role": "ClientUser"
     }
   ]
 }

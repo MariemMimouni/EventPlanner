@@ -68,8 +68,8 @@ export class ReservationFormComponent implements OnInit{
         dates: this.rangeDates
       });
       const toBook = {
-        firstName: "user",
-        lastName:"user",
+        fullName: sessionStorage.getItem("fullName"),
+        email: sessionStorage.getItem("email"),
         venue: this.selectedVenue,
         pack: this.selectedPack,
         dateFrom: this.rangeDates[0],

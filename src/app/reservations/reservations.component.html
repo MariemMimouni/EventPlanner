@@ -1,4 +1,3 @@
-<app-nav-bar></app-nav-bar>
 <p-table
     [value]="reservations"
     dataKey="id"
@@ -8,8 +7,8 @@
 >
     <ng-template pTemplate="header">
         <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
+            <th>Full Name</th>
+            <th>E-mail</th>
             <th>Venue</th>
             <th>Pack</th>
             <th>
@@ -30,8 +29,8 @@
     </ng-template>
     <ng-template pTemplate="body" let-reservation>
         <tr>
-            <td>{{ reservation.firstName }}</td>
-            <td>{{ reservation.lastName }}</td>
+            <td>{{ reservation.fullName }}</td>
+            <td>{{ reservation.email }}</td>
             <td>{{ reservation.venue.name }}</td>
             <td>{{ reservation.pack.name }}</td>
             <td>{{ reservation.dateFrom | date: 'MM/dd/yyyy' }}</td>

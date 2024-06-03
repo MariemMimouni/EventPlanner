@@ -10,7 +10,7 @@ import { Reservation } from 'src/Models/reservations';
   providedIn: 'root'
 })
 export class DashboardService {
-  private apiUrl = 'http://localhost:300'; 
+  private apiUrl = 'http://localhost:300';
 
   constructor(private http: HttpClient) {}
 
@@ -28,7 +28,7 @@ export class DashboardService {
 
   private calculateReservationsPerMonth(reservations: Reservation[]): { month: string, count: number }[] {
     const counts = reservations.reduce((acc, reservation) => {
-      const month = new Date(reservation.date).toLocaleString('default', { month: 'long' });
+      const month = new Date(reservation.dateFrom).toLocaleString('default', { month: 'long' });
       acc[month] = (acc[month] || 0) + 1;
       return acc;
     }, {} as { [key: string]: number });
@@ -38,7 +38,7 @@ export class DashboardService {
 
   private calculateMostRequestedPack(reservations: Reservation[]): { pack: string, count: number } {
     const packCounts = reservations.reduce((acc, reservation) => {
-      acc[reservation.pack] = (acc[reservation.pack] || 0) + 1;
+      acc[reservation.pack.name] = (acc[reservation.pack.name] || 0) + 1;
       return acc;
     }, {} as { [key: string]: number });
 
@@ -48,7 +48,7 @@ export class DashboardService {
 
   private calculateMostRequestedVenues(reservations: Reservation[]): { venue: string, count: number }[] {
     const venueCounts = reservations.reduce((acc, reservation) => {
-      acc[reservation.venue] = (acc[reservation.venue] || 0) + 1;
+      acc[reservation.venue.name] = (acc[reservation.venue.name] || 0) + 1;
       return acc;
     }, {} as { [key: string]: number });
 

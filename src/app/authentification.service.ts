@@ -1,41 +1,29 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {AngularFireAuth} from "@angular/fire/compat/auth";
-import * as auth from 'firebase/auth';
+import { Observable } from 'rxjs';
+import {User} from "../Models/user";
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthentificationService {
+export class AuthService {
 
-  constructor(private afAuth: AngularFireAuth) { }
-  signUp(email: string, password: string) {
-    this.afAuth.createUserWithEmailAndPassword(email, password)
-      .then(() => {
-        // Sign up successful
-      })
-      .catch((error) => {
-        // An error occurred
-      });
+  private baseUrl = 'http://localhost:300';
+
+
+  constructor(private http: HttpClient) { }
+
+  registerUser(userDetails: User) {
+    const usertToRegister={
+      ...userDetails,
+      "role":"ClientUser"
+    }
+    return this.http.post(`${this.baseUrl}/users`, usertToRegister);
   }
-  login(email: string, password: string) {
-    this.afAuth.signInWithEmailAndPassword(email, password)
-      .then(() => {
-        // Login successful
-      })
-      .catch((error) => {
-        // An error occurred
-      });
+
+  getUserByEmail(email: string): Observable<User[]> {
+    return this.http.get<User[]>(`${this.baseUrl}/users?email=${email}`);
   }
-  logout() {
-    this.afAuth.signOut()
-      .then(() => {
-        // Logout successful
-      })
-      .catch((error) => {
-        // An error occurred
-      });
-  }
-  doGoogleLogin(): Promise<any> {
-    return this.afAuth.signInWithPopup(new auth.GoogleAuthProvider());
-  }
+
+
 }

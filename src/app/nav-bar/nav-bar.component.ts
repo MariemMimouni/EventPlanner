@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MenuItem} from "primeng/api";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-nav-bar',
@@ -13,22 +14,29 @@ items: MenuItem[] | undefined;
   this.items=[
     {
       label:'Venues',
-      routerLink:'/venues'
+      routerLink:'venues'
     },
     {
       label: 'Packs',
-      routerLink:'/packs',
+      routerLink:'packs',
     },
     {
       label: 'Reservations',
-      routerLink:'/reservations'
+      routerLink:'reservations'
 
     },
     {
       label: 'Dashboard',
-      routerLink:'/dashboard'
+      routerLink:'dashboard',
+      routerLinkActiveOptions:'active'
 
     },
   ]
+  }
+  constructor(private router: Router) { }
+
+  logOut() {
+    sessionStorage.clear();
+    this.router.navigate(['login']);
   }
 }

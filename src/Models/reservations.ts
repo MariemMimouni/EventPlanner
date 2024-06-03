@@ -3,8 +3,8 @@ import {Packs} from "./packs";
 
 export interface Reservation {
     id: string;
-    firstName: string;
-    lastName: string;
+    fullName: string;
+    email: string;
     venue: Venues;
     pack: Packs;
     dateFrom: Date;

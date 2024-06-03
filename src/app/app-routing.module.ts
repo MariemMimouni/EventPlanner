@@ -4,47 +4,53 @@ import {VenuesTabComponent} from "./venues-tab/venues-tab.component";
 import {CreateVenueComponent} from "./create-venue/create-venue.component";
 import { PacksTabComponent } from './packs-tab/packs-tab.component';
 import { ReservationsComponent } from './reservations/reservations.component';
-import {AuthentificationComponent} from "./authentification/authentification.component";
 import {ReservationFormComponent} from "./reservation-form/reservation-form.component";
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {LoginComponent} from "./login/login.component";
+import {AdminComponent} from "./admin/admin.component";
+import {authGuard} from "./guards/auth.guard";
+import {RegisterComponent} from "./register/register.component";
 
 const routes: Routes = [
   {
-    path: 'venues',
+    path:'admin',
+    component:AdminComponent,
+    canActivate: [authGuard],
+    children:[{
+      path: 'venues',
+      component: VenuesTabComponent
+    },
+      {
+        path: 'packs',
+        component: PacksTabComponent
+      },
+      {
+        path: 'reservations',
+        component: ReservationsComponent
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent
+      },]
+  },
+
+  {
+    path: 'login',
     pathMatch: 'full',
-    component: VenuesTabComponent
+    component:LoginComponent
   },
   {
-    path: 'venues/create',
+    path: 'register',
     pathMatch: 'full',
-    component: CreateVenueComponent
-  },
-  {
-    path: 'packs',
-    pathMatch: 'full',
-    component: PacksTabComponent
-  },
-  {
-    path: 'auth',
-    pathMatch: 'full',
-    component: AuthentificationComponent
+    component:RegisterComponent
   },
   {
     path: 'booking',
     pathMatch: 'full',
     component: ReservationFormComponent
   },
-  {
-    path: 'reservations',
-    pathMatch: 'full',
-    component: ReservationsComponent
-  },
-  {
-    path: 'dashboard',
-    pathMatch: 'full',
-    component: DashboardComponent
-  },
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
+
+   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -38,7 +38,6 @@ import { PacksTabComponent } from './packs-tab/packs-tab.component';
 import { CardModule } from 'primeng/card';
 import { ConfirmationService } from 'primeng/api';
 import { PacksFormComponent } from './packs-form/packs-form.component';
-import { AuthentificationComponent } from './authentification/authentification.component';
 import {StyleClassModule} from 'primeng/styleclass';
 import { ReservationFormComponent } from './reservation-form/reservation-form.component';
 import { StepperModule } from 'primeng/stepper';
@@ -48,6 +47,9 @@ import { Calendar, CalendarModule } from 'primeng/calendar';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChartModule } from 'primeng/chart';
 import { TabViewModule } from 'primeng/tabview';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -60,10 +62,12 @@ import { TabViewModule } from 'primeng/tabview';
     PacksFormComponent,
     ReservationsComponent,
     PacksFormComponent,
-    AuthentificationComponent,
-    ReservationFormComponent
+    ReservationFormComponent,
     ReservationsComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoginComponent,
+    RegisterComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -100,6 +104,9 @@ import { TabViewModule } from 'primeng/tabview';
     CalendarModule,
     ChartModule,
     TabViewModule,
+    StepperModule,
+    DataViewModule,
+    StyleClassModule
 
   ],
   providers: [ConfirmationService],
