@@ -24,6 +24,11 @@ items: MenuItem[] | undefined;
       routerLink:'/reservations'
 
     },
+    {
+      label: 'Dashboard',
+      routerLink:'/dashboard'
+
+    },
   ]
   }
 }

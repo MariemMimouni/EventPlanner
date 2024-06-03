@@ -139,7 +139,7 @@
       "venue": "Venues",
       "pack": "L",
       "date": "2025-07-29T00:00:00Z",
-      "status": "confirmed"
+      "status": "canceled"
     },
     {
       "id": "006",
@@ -148,7 +148,7 @@
       "venue": "Marassim",
       "pack": "L",
       "date": "2024-08-02T00:00:00Z",
-      "status": "canceled"
+      "status": "confirmed"
     }
   ]
 }

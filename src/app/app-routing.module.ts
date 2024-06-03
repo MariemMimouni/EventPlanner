@@ -4,6 +4,7 @@ import {VenuesTabComponent} from "./venues-tab/venues-tab.component";
 import {CreateVenueComponent} from "./create-venue/create-venue.component";
 import { PacksTabComponent } from './packs-tab/packs-tab.component';
 import { ReservationsComponent } from './reservations/reservations.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,12 @@ const routes: Routes = [
     pathMatch: 'full',
     component: ReservationsComponent
   },
+  {
+    path: 'dashboard',
+    pathMatch: 'full',
+    component: DashboardComponent
+  },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
 ];
 
 @NgModule({

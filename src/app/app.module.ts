@@ -40,6 +40,10 @@ import { ConfirmationService } from 'primeng/api';
 import { PacksFormComponent } from './packs-form/packs-form.component';
 import { ReservationsComponent } from './reservations/reservations.component';
 import { Calendar, CalendarModule } from 'primeng/calendar';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ChartModule } from 'primeng/chart';
+import { TabViewModule } from 'primeng/tabview';
+
 
 @NgModule({
   declarations: [
@@ -49,7 +53,8 @@ import { Calendar, CalendarModule } from 'primeng/calendar';
     CreateVenueComponent,
     PacksTabComponent,
     PacksFormComponent,
-    ReservationsComponent
+    ReservationsComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -84,6 +89,8 @@ import { Calendar, CalendarModule } from 'primeng/calendar';
     AngularFireStorageModule,
     CardModule ,
     CalendarModule,
+    ChartModule,
+    TabViewModule,
     
   ],
   providers: [ConfirmationService],
