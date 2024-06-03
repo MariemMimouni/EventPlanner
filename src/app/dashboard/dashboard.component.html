@@ -1,0 +1,12 @@
+<!-- src/app/dashboard/dashboard.component.html -->
+<p-tabView>
+  <p-tabPanel header="Reservations per Month">
+    <p-chart type="bar" [data]="reservationsPerMonthData" style="width: 400px; height: 300px;"></p-chart>
+  </p-tabPanel>
+  <p-tabPanel header="Most Requested Venues">
+    <p-chart type="pie" [data]="mostRequestedVenuesData" style="width: 400px; height: 300px;"></p-chart>
+  </p-tabPanel>
+  <p-tabPanel header="Most Requested Packs">
+    <p-chart type="pie" [data]="mostRequestedPackData" style="width: 400px; height: 300px;"></p-chart>
+  </p-tabPanel>
+</p-tabView>

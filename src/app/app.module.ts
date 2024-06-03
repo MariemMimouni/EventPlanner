@@ -45,6 +45,10 @@ import { StepperModule } from 'primeng/stepper';
 import { DataViewModule } from 'primeng/dataview';
 import { ReservationsComponent } from './reservations/reservations.component';
 import { Calendar, CalendarModule } from 'primeng/calendar';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ChartModule } from 'primeng/chart';
+import { TabViewModule } from 'primeng/tabview';
+
 
 @NgModule({
   declarations: [
@@ -58,6 +62,8 @@ import { Calendar, CalendarModule } from 'primeng/calendar';
     PacksFormComponent,
     AuthentificationComponent,
     ReservationFormComponent
+    ReservationsComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -91,10 +97,9 @@ import { Calendar, CalendarModule } from 'primeng/calendar';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule,
     CardModule ,
-    StyleClassModule,
-    StepperModule,
-    DataViewModule,
-    CalendarModule
+    CalendarModule,
+    ChartModule,
+    TabViewModule,
 
   ],
   providers: [ConfirmationService],

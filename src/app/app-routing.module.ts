@@ -6,6 +6,7 @@ import { PacksTabComponent } from './packs-tab/packs-tab.component';
 import { ReservationsComponent } from './reservations/reservations.component';
 import {AuthentificationComponent} from "./authentification/authentification.component";
 import {ReservationFormComponent} from "./reservation-form/reservation-form.component";
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,12 @@ const routes: Routes = [
     pathMatch: 'full',
     component: ReservationsComponent
   },
+  {
+    path: 'dashboard',
+    pathMatch: 'full',
+    component: DashboardComponent
+  },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
 ];
 
 @NgModule({
