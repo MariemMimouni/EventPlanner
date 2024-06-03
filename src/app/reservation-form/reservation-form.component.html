@@ -1,0 +1,100 @@
+<div class="card">
+  <p-stepper [linear]="true">
+    <!-- Step 1: Choose the Venue -->
+    <p-stepperPanel header="Choose the Venue">
+      <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
+        <div class="flex flex-column h-full">
+          <div class="flex-auto border-2 border-dashed surface-border border-round surface-ground flex justify-content-center align-items-center font-medium">
+            <div class="card">
+              <p-dataView #dv [value]="venues" [rows]="5" [paginator]="true">
+                <ng-template pTemplate="list" let-venue>
+                  <div class="grid grid-nogutter">
+                    <div class="col-12" *ngFor="let item of venues; let first = first" class="col-12">
+                      <div class="flex flex-column sm:flex-row sm:align-items-center p-4 gap-3" [ngClass]="{ 'border-top-1 surface-border': !first, 'selected-item': selectedVenue?.id === item.id }">
+                        <div class="md:w-10rem relative">
+                          <img class="block xl:block mx-auto border-round w-full" [src]="item.imageUrl" [alt]="item.name" />
+                        </div>
+                        <div class="flex flex-column md:flex-row justify-content-between md:align-items-center flex-1 gap-4">
+                          <div class="flex flex-row md:flex-column justify-content-between align-items-start gap-2">
+                            <div>
+                              <span class="font-medium text-secondary text-sm">{{ item.name }}</span>
+                              <div class="text-lg font-medium text-900 mt-2">{{ item.location }}</div>
+                            </div>
+                            <div class="surface-100 p-1" style="border-radius: 30px">
+                              <div class="surface-0 flex align-items-center gap-2 justify-content-center py-1 px-2" style="border-radius: 30px; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.04), 0px 1px 2px 0px rgba(0, 0, 0, 0.06)">
+                                <span class="text-900 font-medium text-sm">{{ item.rating }}</span>
+                                <i class="pi pi-star-fill text-yellow-500"></i>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="flex flex-column md:align-items-end gap-5">
+                            <span class="text-xl font-semibold text-900">{{ '$' + item.price }}</span>
+                            <div class="flex flex-row-reverse md:flex-row gap-2">
+                              <p-button icon="pi pi-check-square" severity="warning" class="flex-auto md:flex-initial white-space-nowrap" label="Select" (onClick)="selectVenue(item)"></p-button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ng-template>
+              </p-dataView>
+            </div>
+          </div>
+          <div class="step-footer">
+            <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit()" [disabled]="!selectedVenue"></p-button>
+          </div>
+        </div>
+      </ng-template>
+    </p-stepperPanel>
+
+    <!-- Step 2: Choose the Pack -->
+    <p-stepperPanel header="Choose the Pack">
+      <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback" let-index="index">
+        <div class="flex flex-column h-full">
+          <div class="flex-auto border-2 border-dashed surface-border border-round surface-ground flex justify-content-center align-items-center font-medium">
+            <div class="card-container p-grid">
+              <div *ngFor="let pack of packs" class="p-col-12 p-md-6 p-lg-4 p-mb-3">
+                <p-card [header]="pack.name" [subheader]="pack.description" [style]="{ width: '360px' }" [ngClass]="{'selected-item': selectedPack?.id === pack.id}">
+                  <ng-template pTemplate="header">
+<!--                    <img alt="Card" src="#" style="width: 100%; height: auto;" />-->
+                  </ng-template>
+                  <p>{{ pack.description }}</p>
+                  <p>{{ pack.price | currency }}</p>
+                  <ng-template pTemplate="footer">
+                    <div class="p-d-flex p-jc-between p-mt-2 card-footer">
+                      <p-button icon="pi pi-check-square" label="Select" severity="warning" class="w-full" styleClass="w-full" (onClick)="selectPack(pack)"></p-button>
+                    </div>
+                  </ng-template>
+                </p-card>
+              </div>
+            </div>
+          </div>
+          <div class="step-footer">
+            <p-button label="Back" icon="pi pi-arrow-left" (onClick)="prevCallback.emit()"></p-button>
+            <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="nextCallback.emit()" [disabled]="!selectedPack"></p-button>
+          </div>
+        </div>
+      </ng-template>
+    </p-stepperPanel>
+
+    <!-- Step 3: Pick your date -->
+    <p-stepperPanel header="Pick your date">
+      <ng-template pTemplate="content" let-prevCallback="prevCallback" let-index="index">
+        <div class="flex flex-column h-full">
+          <div class="flex-auto border-2 border-dashed surface-border border-round surface-ground flex justify-content-center align-items-center font-medium">
+            <div class="text-center">
+              <h2>Select Your Reservation Dates</h2>
+              <p>Choose a date range for your reservation.</p>
+              <p-calendar [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true"></p-calendar>
+            </div>
+          </div>
+          <div class="step-footer">
+            <p-button label="Back" icon="pi pi-arrow-left" (onClick)="prevCallback.emit()"></p-button>
+            <p-button label="Book" severity="warning" (onClick)="book()" [disabled]="!rangeDates"></p-button>
+          </div>
+        </div>
+      </ng-template>
+    </p-stepperPanel>
+  </p-stepper>
+</div>

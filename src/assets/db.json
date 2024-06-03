@@ -106,11 +106,11 @@
     {
       "name": "Premium",
       "description": "This pack Includes food, music, decoration and Photography",
-      "price": "3000",
+      "price": "13000",
       "id": "0001"
     },
     {
-      "id": "0001",
+      "id": "0002",
       "name": "L",
       "description": "This pack Includes food, music, decoration",
       "price": "5000"

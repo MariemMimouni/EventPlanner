@@ -38,6 +38,12 @@ import { PacksTabComponent } from './packs-tab/packs-tab.component';
 import { CardModule } from 'primeng/card';
 import { ConfirmationService } from 'primeng/api';
 import { PacksFormComponent } from './packs-form/packs-form.component';
+import { AuthentificationComponent } from './authentification/authentification.component';
+import {StyleClassModule} from 'primeng/styleclass';
+import { ReservationFormComponent } from './reservation-form/reservation-form.component';
+import { StepperModule } from 'primeng/stepper';
+import { DataViewModule } from 'primeng/dataview';
+import { CalendarModule } from 'primeng/calendar';
 
 @NgModule({
   declarations: [
@@ -46,7 +52,9 @@ import { PacksFormComponent } from './packs-form/packs-form.component';
     VenuesTabComponent,
     CreateVenueComponent,
     PacksTabComponent,
-    PacksFormComponent
+    PacksFormComponent,
+    AuthentificationComponent,
+    ReservationFormComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +88,11 @@ import { PacksFormComponent } from './packs-form/packs-form.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireStorageModule,
     CardModule ,
-    
+    StyleClassModule,
+    StepperModule,
+    DataViewModule,
+    CalendarModule
+
   ],
   providers: [ConfirmationService],
   bootstrap: [AppComponent]
