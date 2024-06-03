@@ -17,16 +17,20 @@ export class ReservationsComponent implements OnInit {
 
   ngOnInit(): void {
     this.reservationService.getReservations().subscribe(data => {
+      console.log(data);
       this.reservations = data.map(reservation => ({
         ...reservation,
-        date: new Date(reservation.date)
+        dateFrom: new Date(reservation.dateFrom),
+        dateTo: new Date(reservation.dateFrom)
+
+
       }));
     });
   }
 
-  updateStatus(id: number, status: string): void {
+  updateStatus(id: string, status: string): void {
     this.reservationService.updateReservationStatus(id, status).subscribe(() => {
-      this.reservations = this.reservations.map(reservation => 
+      this.reservations = this.reservations.map(reservation =>
         reservation.id === id ? { ...reservation, status } : reservation
       );
       this.showMessage(status);

@@ -16,12 +16,22 @@ export class ReservationService {
     return this.http.get<Reservation[]>(`${this.apiUrl}/Reservation`).pipe(
       map(reservations => reservations.map(reservation => ({
         ...reservation,
-        date: new Date(reservation.date)
+        dateFrom: new Date(reservation.dateFrom),
+        dateTo: new Date(reservation.dateTo)
+
       })))
     );
   }
 
-  updateReservationStatus(id: number, status: string): Observable<any> {
+  updateReservationStatus(id: string, status: string): Observable<any> {
     return this.http.patch(`${this.apiUrl}/Reservation/${id}`, { status });
+  }
+
+  addReservation(toBook:any) {
+    const r = {
+      ...toBook,
+      id: Math.ceil(Math.random()*100)
+    }
+    return this.http.post(`${this.apiUrl}/Reservation`, toBook);
   }
 }

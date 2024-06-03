@@ -54,7 +54,7 @@ import { Calendar, CalendarModule } from 'primeng/calendar';
     CreateVenueComponent,
     PacksTabComponent,
     PacksFormComponent,
-    ReservationsComponent
+    ReservationsComponent,
     PacksFormComponent,
     AuthentificationComponent,
     ReservationFormComponent

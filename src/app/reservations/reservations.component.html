@@ -1,3 +1,4 @@
+<app-nav-bar></app-nav-bar>
 <p-table
     [value]="reservations"
     dataKey="id"
@@ -13,10 +14,16 @@
             <th>Pack</th>
             <th>
                 <div class="flex align-items-center">
-                    Date
+                    Date From
                     <p-columnFilter type="date" field="date" display="menu" />
                 </div>
             </th>
+          <th>
+            <div class="flex align-items-center">
+              Date To
+              <p-columnFilter type="date" field="date" display="menu" />
+            </div>
+          </th>
             <th>Status</th>
             <th>Response</th>
         </tr>
@@ -25,9 +32,10 @@
         <tr>
             <td>{{ reservation.firstName }}</td>
             <td>{{ reservation.lastName }}</td>
-            <td>{{ reservation.venue }}</td>
-            <td>{{ reservation.pack }}</td>
-            <td>{{ reservation.date | date: 'MM/dd/yyyy' }}</td>
+            <td>{{ reservation.venue.name }}</td>
+            <td>{{ reservation.pack.name }}</td>
+            <td>{{ reservation.dateFrom | date: 'MM/dd/yyyy' }}</td>
+          <td>{{ reservation.dateTo | date: 'MM/dd/yyyy' }}</td>
             <td>{{ reservation.status }}</td>
             <td>
                 <button pButton type="button" icon="pi pi-check" class="p-button-success" (click)="updateStatus(reservation.id, 'confirmed')"></button>
