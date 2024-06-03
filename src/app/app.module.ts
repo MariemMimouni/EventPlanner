@@ -43,7 +43,8 @@ import {StyleClassModule} from 'primeng/styleclass';
 import { ReservationFormComponent } from './reservation-form/reservation-form.component';
 import { StepperModule } from 'primeng/stepper';
 import { DataViewModule } from 'primeng/dataview';
-import { CalendarModule } from 'primeng/calendar';
+import { ReservationsComponent } from './reservations/reservations.component';
+import { Calendar, CalendarModule } from 'primeng/calendar';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,8 @@ import { CalendarModule } from 'primeng/calendar';
     VenuesTabComponent,
     CreateVenueComponent,
     PacksTabComponent,
+    PacksFormComponent,
+    ReservationsComponent
     PacksFormComponent,
     AuthentificationComponent,
     ReservationFormComponent

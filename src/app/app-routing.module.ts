@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {VenuesTabComponent} from "./venues-tab/venues-tab.component";
 import {CreateVenueComponent} from "./create-venue/create-venue.component";
 import { PacksTabComponent } from './packs-tab/packs-tab.component';
+import { ReservationsComponent } from './reservations/reservations.component';
 import {AuthentificationComponent} from "./authentification/authentification.component";
 import {ReservationFormComponent} from "./reservation-form/reservation-form.component";
 
@@ -31,6 +32,11 @@ const routes: Routes = [
     path: 'booking',
     pathMatch: 'full',
     component: ReservationFormComponent
+  },
+  {
+    path: 'reservations',
+    pathMatch: 'full',
+    component: ReservationsComponent
   },
 ];
 
