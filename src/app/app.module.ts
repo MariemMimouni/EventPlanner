@@ -50,6 +50,15 @@ import { TabViewModule } from 'primeng/tabview';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AdminComponent } from './admin/admin.component';
+import { ClientComponent } from './client/client.component';
+import { HomeComponent } from './client/home/home.component';
+import { OrdersComponent } from './client/orders/orders.component';
+import { ProfileComponent } from './client/profile/profile.component';
+import { SearchComponent } from './client/search/search.component';
+import { BadgeModule } from 'primeng/badge';
+import { AvatarModule } from 'primeng/avatar';
+import { StepsModule } from 'primeng/steps';
+import { CarouselModule } from 'primeng/carousel';
 
 
 @NgModule({
@@ -68,6 +77,17 @@ import { AdminComponent } from './admin/admin.component';
     LoginComponent,
     RegisterComponent,
     AdminComponent
+    DashboardComponent,
+    ClientComponent,
+    HomeComponent,
+    OrdersComponent,
+    ProfileComponent,
+    SearchComponent,
+    ClientComponent,
+    HomeComponent,
+    OrdersComponent,
+    ProfileComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -104,6 +124,10 @@ import { AdminComponent } from './admin/admin.component';
     CalendarModule,
     ChartModule,
     TabViewModule,
+    BadgeModule,
+    AvatarModule,
+    StepsModule,
+    CarouselModule
     StepperModule,
     DataViewModule,
     StyleClassModule

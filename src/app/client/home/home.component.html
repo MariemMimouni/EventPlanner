@@ -1,0 +1,39 @@
+<div class="home-container">
+<!-- Packs Section -->
+<div class="packs-section">
+    <h2>Packs</h2>
+    <div class="card-container">
+      <div *ngFor="let pack of packs" (click)="selectPack(pack)" class="pack-card">
+        <img [src]="pack.image" alt="{{ pack.name }}">
+        <h3>{{ pack.name }}</h3>
+        <p *ngIf="selectedPack === pack">{{ pack.description }}</p>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+    <!-- Venues Section -->
+<div class="venues-section">
+    <h2>Venues</h2>
+    <p-carousel [value]="venues" [numVisible]="3" [numScroll]="3">
+      <ng-template pTemplate="item" let-venue>
+        <div class="venue-item">
+          <img [src]="venue.image" alt="{{ venue.name }}">
+          <div class="venue-detail">
+            <h3>{{ venue.name }}</h3>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+  
+    <!-- Guideline Section -->
+    <div class="guideline-section">
+      <h2>Guideline</h2>
+      <p-steps [model]="steps" [readonly]="false"></p-steps>
+    </div>
+  </div>
+  

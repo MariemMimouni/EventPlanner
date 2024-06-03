@@ -4,12 +4,7 @@ import {VenuesTabComponent} from "./venues-tab/venues-tab.component";
 import {CreateVenueComponent} from "./create-venue/create-venue.component";
 import { PacksTabComponent } from './packs-tab/packs-tab.component';
 import { ReservationsComponent } from './reservations/reservations.component';
-import {ReservationFormComponent} from "./reservation-form/reservation-form.component";
 import { DashboardComponent } from './dashboard/dashboard.component';
-import {LoginComponent} from "./login/login.component";
-import {AdminComponent} from "./admin/admin.component";
-import {authGuard} from "./guards/auth.guard";
-import {RegisterComponent} from "./register/register.component";
 
 const routes: Routes = [
   {
@@ -51,6 +46,23 @@ const routes: Routes = [
   },
 
    { path: '', redirectTo: '/login', pathMatch: 'full' }
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  {
+    path: 'client',
+    component: ClientComponent,
+    children: [
+      { path: 'home', component: HomeComponent },
+      { path: 'orders', component: OrdersComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'search', component: SearchComponent }
+    ]
+  },
+  {
+    path: 'home',
+    pathMatch: 'full',
+    component: HomeComponent
+  },
+  { path: 'client', redirectTo: '/client/home', pathMatch: 'full' }
 ];
 
 @NgModule({
