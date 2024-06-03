@@ -1,0 +1,44 @@
+<p-table
+    [value]="reservations"
+    dataKey="id"
+    [rows]="10"
+    [rowsPerPageOptions]="[10, 25, 50]"
+    [paginator]="true"
+>
+    <ng-template pTemplate="header">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Venue</th>
+            <th>Pack</th>
+            <th>
+                <div class="flex align-items-center">
+                    Date
+                    <p-columnFilter type="date" field="date" display="menu" />
+                </div>
+            </th>
+            <th>Status</th>
+            <th>Response</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-reservation>
+        <tr>
+            <td>{{ reservation.firstName }}</td>
+            <td>{{ reservation.lastName }}</td>
+            <td>{{ reservation.venue }}</td>
+            <td>{{ reservation.pack }}</td>
+            <td>{{ reservation.date | date: 'MM/dd/yyyy' }}</td>
+            <td>{{ reservation.status }}</td>
+            <td>
+                <button pButton type="button" icon="pi pi-check" class="p-button-success" (click)="updateStatus(reservation.id, 'confirmed')"></button>
+                <button pButton type="button" icon="pi pi-times" class="p-button-danger" (click)="updateStatus(reservation.id, 'canceled')"></button>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="7">No reservations found.</td>
+        </tr>
+    </ng-template>
+</p-table>
+<p-toast></p-toast>
