@@ -1,5 +1,8 @@
 // src/app/client/client.component.ts
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import {user} from "@angular/fire/auth";
+import {MenuItem} from "primeng/api";
 
 @Component({
   selector: 'app-client',
@@ -7,14 +10,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./client.component.css']
 })
 export class ClientComponent implements OnInit {
-  menuItems: any[] = [];
+  isLoggedIn: boolean =false;
+  fullName:string | null=null;
+
+  constructor(private router: Router) {
+
+  }
 
   ngOnInit() {
-    this.menuItems = [
-      { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: ['/client/home'] },
-      { label: 'Orders', icon: 'pi pi-fw pi-shopping-cart', routerLink: ['/client/orders'] },
-      { label: 'Profile', icon: 'pi pi-fw pi-user', routerLink: ['/client/profile'] },
-      { label: 'Search', icon: 'pi pi-fw pi-search', routerLink: ['/client/search'] }
-    ];
+    this.fullName=sessionStorage.getItem("fullName");
+    if (!!this.fullName){
+      this.isLoggedIn=true;
+    }
+    this.items=[
+      {
+        label:'Booking',
+        routerLink:'booking',
+        icon: 'pi pi-calendar'
+      },
+    ]
+
   }
+  logOut() {
+    sessionStorage.clear();
+    this.router.navigate(['/login'])
+  }
+
+  protected readonly user = user;
+  items: MenuItem[] | undefined;
 }

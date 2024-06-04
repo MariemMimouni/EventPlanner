@@ -52,14 +52,12 @@ import { RegisterComponent } from './register/register.component';
 import { AdminComponent } from './admin/admin.component';
 import { ClientComponent } from './client/client.component';
 import { HomeComponent } from './client/home/home.component';
-import { OrdersComponent } from './client/orders/orders.component';
-import { ProfileComponent } from './client/profile/profile.component';
-import { SearchComponent } from './client/search/search.component';
 import { BadgeModule } from 'primeng/badge';
 import { AvatarModule } from 'primeng/avatar';
 import { StepsModule } from 'primeng/steps';
 import { CarouselModule } from 'primeng/carousel';
-
+import { DividerModule } from 'primeng/divider';
+import { FieldsetModule } from 'primeng/fieldset';
 
 @NgModule({
   declarations: [
@@ -76,18 +74,12 @@ import { CarouselModule } from 'primeng/carousel';
     DashboardComponent,
     LoginComponent,
     RegisterComponent,
-    AdminComponent
+    AdminComponent,
     DashboardComponent,
     ClientComponent,
     HomeComponent,
-    OrdersComponent,
-    ProfileComponent,
-    SearchComponent,
     ClientComponent,
     HomeComponent,
-    OrdersComponent,
-    ProfileComponent,
-    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -127,10 +119,12 @@ import { CarouselModule } from 'primeng/carousel';
     BadgeModule,
     AvatarModule,
     StepsModule,
-    CarouselModule
+    CarouselModule,
     StepperModule,
     DataViewModule,
-    StyleClassModule
+    StyleClassModule,
+    DividerModule,
+    FieldsetModule
 
   ],
   providers: [ConfirmationService],

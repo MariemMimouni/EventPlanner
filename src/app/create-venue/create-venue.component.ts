@@ -47,6 +47,8 @@ formGroup !: FormGroup;
   }
 
   async onUpload($event: FileUploadEvent) {
+    console.log("upload picture");
+
     const file = $event.files[0];
     if (file) {
       // Upload the file to Firebase Storage
@@ -55,7 +57,7 @@ formGroup !: FormGroup;
 
       // Get the download URL of the uploaded file
       const downloadURL = await result.ref.getDownloadURL();
-
+      console.log(downloadURL);
       // Save the file name or download URL in your JSON server
       // For example, you can update the form control value
       // @ts-ignore

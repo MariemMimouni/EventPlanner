@@ -1,39 +1,47 @@
 <div class="home-container">
-<!-- Packs Section -->
-<div class="packs-section">
-    <h2>Packs</h2>
-    <div class="card-container">
-      <div *ngFor="let pack of packs" (click)="selectPack(pack)" class="pack-card">
-        <img [src]="pack.image" alt="{{ pack.name }}">
-        <h3>{{ pack.name }}</h3>
-        <p *ngIf="selectedPack === pack">{{ pack.description }}</p>
+  <!-- Venues Section -->
+  <p-fieldset legend="Venues">
+    <div class="venues-section mt-5">
+      <p-carousel [value]="venues" [numVisible]="3" [numScroll]="3" [circular]="true" [autoplayInterval]="3000">
+        <ng-template pTemplate="item" let-venue>
+          <div class="venue-item p-shadow-3">
+            <img [src]="venue.imageUrl" alt="{{ venue.name }}" class="w-full venue-image" />
+            <div class="venue-detail p-p-3">
+              <h3>{{ venue.name }}</h3>
+            </div>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </p-fieldset>
+
+  <p-divider />
+
+  <!-- Packs Section -->
+  <p-fieldset legend="Packs">
+    <div class="packs-section">
+      <div class="card-container p-grid">
+        <div *ngFor="let pack of packs" class="p-col-12 p-md-6 p-lg-4 p-mb-3">
+          <p-card [header]="pack.name" [subheader]="pack.description" [style]="{ width: '360px' }" [ngClass]="{'selected-item': selectedPack?.id === pack.id}">
+            <ng-template pTemplate="header">
+              <img alt="Card" src="/assets/logo-2.png" style="height: 200px; width:auto" />
+            </ng-template>
+            <p>{{ pack.price | currency }}</p>
+          </p-card>
+        </div>
       </div>
     </div>
-  </div>
-  
-  
-  
-  
-  
-    <!-- Venues Section -->
-<div class="venues-section">
-    <h2>Venues</h2>
-    <p-carousel [value]="venues" [numVisible]="3" [numScroll]="3">
-      <ng-template pTemplate="item" let-venue>
-        <div class="venue-item">
-          <img [src]="venue.image" alt="{{ venue.name }}">
-          <div class="venue-detail">
-            <h3>{{ venue.name }}</h3>
-          </div>
-        </div>
-      </ng-template>
-    </p-carousel>
-  </div>
-  
-    <!-- Guideline Section -->
-    <div class="guideline-section">
-      <h2>Guideline</h2>
+  </p-fieldset>
+
+  <p-divider />
+
+  <!-- Guideline Section -->
+  <p-fieldset legend="Guideline">
+    <div class="guideline-section mt-5">
       <p-steps [model]="steps" [readonly]="false"></p-steps>
+      <div class="p-d-flex p-jc-center">
+        <p-button label="Book Now!" routerLink="/client/booking" severity="warning" class="book-now-button"></p-button>
+      </div>
     </div>
-  </div>
-  
+  </p-fieldset>
+</div>

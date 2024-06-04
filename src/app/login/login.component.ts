@@ -39,7 +39,7 @@ export class LoginComponent {
           if(response[0].role=="admin") {
             this.router.navigate(['/admin/venues']);
           }else {
-            this.router.navigate(['/booking']);
+            this.router.navigate(['/client/home']);
           }
         } else {
           this.msgService.add({ severity: 'error', summary: 'Error', detail: 'email or password is wrong' });

@@ -8,151 +8,187 @@
       "price": "837",
       "status": "Available",
       "imageUrl": "https://firebasestorage.googleapis.com/v0/b/eventplanner-7267f.appspot.com/o/venues%2F960x0.jpg.webp?alt=media&token=b102871f-28df-43b5-bbaa-c5ff51771688",
-      "id": "627"
+      "id": "627",
+      "rating": 3
     },
     {
       "name": "Marassim",
-      "location": "Tunis Road, Km 11",
-      "capacity": 800,
-      "surface": 500,
-      "price": "989854",
-      "status": "Available",
-      "imageUrl": null,
-      "id": "110"
-    },
-    {
-      "name": "Opera",
-      "location": "lafrane",
-      "capacity": 8979,
-      "surface": 872,
-      "price": "8387",
-      "status": "available",
-      "imageUrl": null,
-      "id": "146"
-    },
-    {
-      "id": "607",
-      "name": "Layeli updated2",
-      "location": "lafrane",
-      "capacity": 8979,
-      "surface": 872,
-      "price": "8387",
-      "status": "available"
-    },
-    {
-      "id": "630",
-      "name": "Layeli updated22",
-      "location": "lafrane",
-      "capacity": 8979,
-      "surface": 872,
-      "price": "8387",
-      "status": "available"
-    },
-    {
-      "id": "458",
-      "name": "mariemmimouni 22",
-      "location": "test",
-      "capacity": 809,
-      "surface": 7987,
-      "price": "837",
-      "status": "Available"
-    },
-    {
-      "id": "881",
-      "name": "Test",
-      "location": "lool",
-      "capacity": 99,
-      "surface": 37,
-      "price": "334",
-      "status": "Available"
-    },
-    {
-      "name": "happy",
-      "location": "happy",
+      "location": "Sfax",
       "capacity": 1000,
       "surface": 1000,
       "price": "874",
-      "status": "Not Available",
-      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/eventplanner-7267f.appspot.com/o/venues%2Fpolynesia-3021072_150.jpg?alt=media&token=58116b3c-bf0b-40b9-a598-05e30afb4253",
-      "id": "20"
+      "status": "Available",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/eventplanner-7267f.appspot.com/o/venues%2FHotelCafeRoyal-02.jpg?alt=media&token=ddff31b9-f249-431b-8eae-e2882ad12132",
+      "id": "20",
+      "rating": 4.5
     },
     {
-      "id": "250",
+      "id": 824,
       "name": "Opera",
       "location": "Gammart",
       "capacity": 600,
-      "surface": 500,
-      "price": "2000",
+      "surface": 700,
+      "price": "5000",
       "status": "Available",
-      "imageUrl": null
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/eventplanner-7267f.appspot.com/o/venues%2F059_Wedding%2Bat%2BThe%2BPaseo%2Bvenue%2Bin%2BApache%2BJunction%2C%2BArizona%2Bonly%2B45%2Bminutes%2Bfrom%2BPhoenix..jpg?alt=media&token=bfe45569-4238-4c05-b759-752884b9e48f",
+      "rating": 3
+    },
+    {
+      "id": 171,
+      "name": "Secret Garden",
+      "location": "Bizerte , Tunisia",
+      "capacity": 120,
+      "surface": 300,
+      "price": "1200",
+      "status": "Available",
+      "imageUrl": "https://firebasestorage.googleapis.com/v0/b/eventplanner-7267f.appspot.com/o/venues%2FTori%2B_%2BWill_Matoli%2BKeely%2BPhotography_Reception%2BDetails-536.jpg?alt=media&token=73c45ec8-7a31-45af-a4d4-4e847f852a64",
+      "rating": 3.5
     }
   ],
   "Packs": [
     {
-      "name": "Premium",
+      "name": "Diamond",
       "description": "This pack Includes food, music, decoration and Photography",
       "price": "13000",
       "id": "0001"
     },
     {
-      "id": "0002",
-      "name": "L",
+      "name": "Gold",
       "description": "This pack Includes food, music, decoration",
-      "price": "5000"
+      "price": "5000",
+      "id": "0002"
     },
     {
-      "id": "305",
-      "name": "Basic Pack",
+      "name": "Silver",
       "description": "This pack only includes refreshments, lighting and a photographer.",
-      "price": "500"
+      "price": "500",
+      "id": "305"
     }
   ],
   "Reservation": [
     {
-      "id": "c7e5",
+      "id": "62c5",
       "fullName": "Malek Bali",
       "email": "user1@gmail.com",
       "venue": {
-        "id": "146",
-        "name": "Layeli updated",
-        "location": "lafrane",
-        "capacity": 8979,
-        "surface": 872,
-        "price": "8387",
-        "status": "available"
+        "name": "Layeli",
+        "location": "Sousse, Tunisia",
+        "capacity": 809,
+        "surface": 7987,
+        "price": "837",
+        "status": "Available",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/eventplanner-7267f.appspot.com/o/venues%2F960x0.jpg.webp?alt=media&token=b102871f-28df-43b5-bbaa-c5ff51771688",
+        "id": "627",
+        "rating": 3
       },
       "pack": {
-        "id": "0002",
-        "name": "L",
+        "name": "Gold",
         "description": "This pack Includes food, music, decoration",
-        "price": "5000"
+        "price": "5000",
+        "id": "0002"
       },
-      "dateFrom": "2024-06-12T23:00:00.000Z",
-      "dateTo": "2024-06-20T23:00:00.000Z",
-      "status": "confirmed"
+      "dateFrom": "2024-04-30T23:00:00.000Z",
+      "dateTo": "2024-05-02T23:00:00.000Z",
+      "status": "Pending"
     },
     {
-      "id": "8409",
+      "id": "4750",
       "fullName": "Malek Bali",
       "email": "user1@gmail.com",
       "venue": {
-        "name": "Opera",
-        "location": "lafrane",
-        "capacity": 8979,
-        "surface": 872,
-        "price": "8387",
-        "status": "available",
-        "imageUrl": null,
-        "id": "146"
+        "id": 171,
+        "name": "Secret Garden",
+        "location": "Bizerte , Tunisia",
+        "capacity": 120,
+        "surface": 300,
+        "price": "1200",
+        "status": "Available",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/eventplanner-7267f.appspot.com/o/venues%2FTori%2B_%2BWill_Matoli%2BKeely%2BPhotography_Reception%2BDetails-536.jpg?alt=media&token=73c45ec8-7a31-45af-a4d4-4e847f852a64",
+        "rating": 3.5
       },
       "pack": {
-        "id": "0002",
-        "name": "L",
-        "description": "This pack Includes food, music, decoration",
-        "price": "5000"
+        "name": "Silver",
+        "description": "This pack only includes refreshments, lighting and a photographer.",
+        "price": "500",
+        "id": "305"
       },
-      "dateFrom": "2024-06-04T23:00:00.000Z",
-      "dateTo": "2024-06-11T23:00:00.000Z",
+      "dateFrom": "2024-07-10T23:00:00.000Z",
+      "dateTo": "2024-07-11T23:00:00.000Z",
+      "status": "Pending"
+    },
+    {
+      "id": "d30e",
+      "fullName": "Malek Bali",
+      "email": "user1@gmail.com",
+      "venue": {
+        "id": 824,
+        "name": "Opera",
+        "location": "Gammart",
+        "capacity": 600,
+        "surface": 700,
+        "price": "5000",
+        "status": "Available",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/eventplanner-7267f.appspot.com/o/venues%2F059_Wedding%2Bat%2BThe%2BPaseo%2Bvenue%2Bin%2BApache%2BJunction%2C%2BArizona%2Bonly%2B45%2Bminutes%2Bfrom%2BPhoenix..jpg?alt=media&token=bfe45569-4238-4c05-b759-752884b9e48f",
+        "rating": 3
+      },
+      "pack": {
+        "name": "Gold",
+        "description": "This pack Includes food, music, decoration",
+        "price": "5000",
+        "id": "0002"
+      },
+      "dateFrom": "2024-06-14T23:00:00.000Z",
+      "dateTo": "2024-06-14T23:00:00.000Z",
+      "status": "Pending"
+    },
+    {
+      "id": "2d4a",
+      "fullName": "Malek Bali",
+      "email": "user1@gmail.com",
+      "venue": {
+        "name": "Marassim",
+        "location": "Sfax",
+        "capacity": 1000,
+        "surface": 1000,
+        "price": "874",
+        "status": "Available",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/eventplanner-7267f.appspot.com/o/venues%2FHotelCafeRoyal-02.jpg?alt=media&token=ddff31b9-f249-431b-8eae-e2882ad12132",
+        "id": "20",
+        "rating": 4.5
+      },
+      "pack": {
+        "name": "Gold",
+        "description": "This pack Includes food, music, decoration",
+        "price": "5000",
+        "id": "0002"
+      },
+      "dateFrom": "2024-06-11T23:00:00.000Z",
+      "dateTo": "2024-06-13T23:00:00.000Z",
+      "status": "Pending"
+    },
+    {
+      "id": "0dad",
+      "fullName": "Malek Bali",
+      "email": "user1@gmail.com",
+      "venue": {
+        "name": "Layeli",
+        "location": "Sousse, Tunisia",
+        "capacity": 809,
+        "surface": 7987,
+        "price": "837",
+        "status": "Available",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/eventplanner-7267f.appspot.com/o/venues%2F960x0.jpg.webp?alt=media&token=b102871f-28df-43b5-bbaa-c5ff51771688",
+        "id": "627",
+        "rating": 3
+      },
+      "pack": {
+        "name": "Diamond",
+        "description": "This pack Includes food, music, decoration and Photography",
+        "price": "13000",
+        "id": "0001"
+      },
+      "dateFrom": "2024-06-12T23:00:00.000Z",
+      "dateTo": "2024-06-21T23:00:00.000Z",
       "status": "Pending"
     }
   ],

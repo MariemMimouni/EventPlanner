@@ -9,9 +9,8 @@
   <div *ngFor="let pack of packs" class="p-col-12 p-md-6 p-lg-4 p-mb-3">
     <p-card [header]="pack.name" [subheader]="pack.description" [style]="{ width: '360px' }">
       <ng-template pTemplate="header">
-        <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" style="width: 100%; height: auto;" />
+        <img alt="Card" src="assets/logo-2.png" height="200px" style="width: 100%; height: auto;" />
       </ng-template>
-      <p>{{ pack.description }}</p>
       <p>{{ pack.price | currency }}</p>
       <ng-template pTemplate="footer">
         <div class="p-d-flex p-jc-between p-mt-2 card-footer">

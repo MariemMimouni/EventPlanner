@@ -26,7 +26,7 @@ export class ReservationFormComponent implements OnInit{
 
   getAllVenues() {
     this.VenueS.GETALL().subscribe((v: Venues[] )=>{
-      this.venues=v.filter(venue => venue.status === 'available');
+      this.venues=v.filter(venue => venue.status === 'Available');
       console.log(v);
     })
   }
@@ -78,7 +78,7 @@ export class ReservationFormComponent implements OnInit{
       }
       this.resService.addReservation(toBook).subscribe(()=>{
         this.messageService.add({severity: 'success', summary: 'Venue updated successfully'});
-          this.router.navigate(['/home']);
+          this.router.navigate(['/client/home']);
       })
     }
   }
